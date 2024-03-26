@@ -32,9 +32,14 @@ public class Targets : MonoBehaviour
 
     private void OnMouseDown()
     {
-        Destroy(gameObject);
-        spawnManager.UpdateScore(pointValue);
-        Instantiate(explogionParticle, transform.position, explogionParticle.transform.rotation);
+        if (spawnManager.isGameActive == true)
+        {
+            Destroy(gameObject);
+            spawnManager.UpdateScore(pointValue);
+            Instantiate(explogionParticle, transform.position, explogionParticle.transform.rotation);
+        }
+
+
     }
 
 
