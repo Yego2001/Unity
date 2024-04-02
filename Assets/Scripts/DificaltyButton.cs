@@ -6,11 +6,15 @@ using UnityEngine.UI;
 public class DificaltyButton : MonoBehaviour
 {
     private Button button;
+    private SpawnManager spawnManagerScript;
+    public float dificalty;
+
     void Start()
     {
-        Debug.Log("Hello, I'm a button");
         button = GetComponent<Button>();
         button.onClick.AddListener(SetDificalty);
+        spawnManagerScript = GameObject.Find("SpawnManager").GetComponent<SpawnManager>();
+
 
     }
 
@@ -24,6 +28,10 @@ public class DificaltyButton : MonoBehaviour
     void SetDificalty()
     {
         Debug.Log(gameObject.name + "Была нажата");
+        spawnManagerScript.spawnRate = this.dificalty;
+        spawnManagerScript.StartGame();
+
+
 
     }
 }

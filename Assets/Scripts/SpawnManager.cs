@@ -4,26 +4,22 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Unity.VisualScripting;
 
 public class SpawnManager : MonoBehaviour
 {
     public GameObject[] spawn;
-    private float spawnRate = 1;
+    public float spawnRate = 1;
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI goverText;
     public int score = 0;
     public bool isGameActive;
     public Button restartButton;
+    public GameObject tycleScreen;
 
 
     void Start()
     {
-        isGameActive = true;
-        score = 0;
-        scoreText.text = "Score: " + score;
-        StartCoroutine(SpawnTargets());
-
-
 
     }
 
@@ -65,5 +61,15 @@ public class SpawnManager : MonoBehaviour
     public void RestartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+
+    public void StartGame()
+    {
+        isGameActive = true;
+        score = 0;
+        scoreText.text = "Score: " + score;
+        StartCoroutine(SpawnTargets());
+        tycleScreen.gameObject.SetActive(false);
     }
 }
