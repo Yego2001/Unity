@@ -28,6 +28,9 @@ public class GameManagerX : MonoBehaviour
     // Start the game, remove title screen, reset score, and adjust spawnRate based on difficulty button clicked
     public void StartGame(int difficulty)
     {
+
+
+
         spawnRate /= difficulty;
         isGameActive = true;
         StartCoroutine(SpawnTarget());
@@ -41,8 +44,9 @@ public class GameManagerX : MonoBehaviour
     {
         if (isGameActive)
         {
-            timeLeft -= timeLeft.deltaTime;
-            timeText.SetText("Time: " + Mathf.Round(timeLeft));
+            timeLeft = timeLeft - Time.deltaTime;
+            // timeText.SetText("Time: " + Mathf.Round(timeLeft));
+            timeText.SetText("Time: " + timeLeft);
         }
 
     }
