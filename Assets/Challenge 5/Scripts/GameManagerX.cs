@@ -18,7 +18,7 @@ public class GameManagerX : MonoBehaviour
     private int score;
     private float spawnRate = 1.5f;
     public bool isGameActive;
-    private float timeLeft = 60;
+    private float timeLeft = 30;
 
     private float spaceBetweenSquares = 2.5f;
     private float minValueX = -3.75f; //  x value of the center of the left-most square
@@ -45,8 +45,13 @@ public class GameManagerX : MonoBehaviour
         if (isGameActive)
         {
             timeLeft = timeLeft - Time.deltaTime;
-            // timeText.SetText("Time: " + Mathf.Round(timeLeft));
-            timeText.SetText("Time: " + timeLeft);
+            timeText.SetText("Time: " + Mathf.Round(timeLeft));
+            // timeText.SetText("Time: " + timeLeft);
+
+        }
+        if (timeLeft <= 0)
+        {
+            GameOver();
         }
 
     }
