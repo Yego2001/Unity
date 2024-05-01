@@ -35,7 +35,16 @@ public class BirdMovie : MonoBehaviour
             rb.velocity = Vector3.right * speed;
             transform.rotation = maxRotation;
         }
-        //transform.rotation = Quaternion.Lerp(transform.rotation, minRotation, Time.deltaTime * rotationSpeed);
+        transform.rotation = Quaternion.Lerp(transform.rotation, minRotation, Time.deltaTime * rotationSpeed);
 
+    }
+
+
+
+    public void ResetBird()
+    {
+        transform.position = startPosition;
+        rb.velocity = Vector3.zero;
+        transform.rotation = Quaternion.Euler(0, 0, 0);
     }
 }
