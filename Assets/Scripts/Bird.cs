@@ -13,12 +13,6 @@ public class Bird : MonoBehaviour
         ResetGame();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
 
 
     public void IncreaceScore()
@@ -31,7 +25,7 @@ public class Bird : MonoBehaviour
     public void ResetGame()
     {
         score = 0;
-        birdMovie.ResetBird;
+        birdMovie.ResetBird();
     }
 
 
@@ -42,4 +36,5 @@ public class Bird : MonoBehaviour
         Time.timeScale = 0;
     }
 }
+
 
