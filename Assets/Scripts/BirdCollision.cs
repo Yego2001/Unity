@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class BirdCollision : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private Bird bird;
     void Start()
     {
-        
+        bird = GetComponent<Bird>();
     }
 
     // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if (collision.gameObject.tag == "ScoreZone")
+        {
+            bird.IncreaceScore();
+        }
+        else
+        {
+            bird.Loss();
+        }
     }
 }
