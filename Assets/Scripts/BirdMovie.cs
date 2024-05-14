@@ -6,7 +6,7 @@ using UnityEngine;
 public class BirdMovie : MonoBehaviour
 {
     private Vector3 startPosition;
-    private float tapForce = 501;
+    private float tapForce = 333;
     private Rigidbody2D rb;
     public float speed = 0;
     public float rotationSpeed;

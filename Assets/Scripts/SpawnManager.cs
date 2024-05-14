@@ -17,6 +17,7 @@ public class SpawnManager : MonoBehaviour
     // Update is called once per frame
     private void SpawnObjects()
     {
+        spawnPosition.position = new Vector3(spawnPosition.position.x, Random.Range(-2.5f, 1f), spawnPosition.position.z);
         Instantiate(pipes, spawnPosition.position, pipes.transform.rotation);
     }
 
