@@ -11,7 +11,6 @@ public class Destroer : MonoBehaviour
     private Transform mainCamera;
 
 
-    // public Transform pipes;
     void Start()
     {
         mainCamera = GameObject.Find("Main Camera").GetComponent<Transform>();
@@ -24,9 +23,9 @@ public class Destroer : MonoBehaviour
     void Update(
     )
     {
-        Transform pipe = this.gameObject.GetComponent<Transform>();
+        Transform pipes = this.gameObject.GetComponent<Transform>();
 
-        if ((mainCamera.position.x - pipe.position.x) > 10)
+        if ((mainCamera.position.x - pipes.position.x) > 10)
         {
             Destroy(this.gameObject);
         }

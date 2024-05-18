@@ -6,6 +6,8 @@ public class Bird : MonoBehaviour
 {
     private BirdMovie birdMovie;
     public int score;
+    public GameObject goScreen;
+    public GameObject startScreen;
 
     void Start()
     {
