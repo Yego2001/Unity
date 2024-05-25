@@ -23,7 +23,7 @@ public class Destroer : MonoBehaviour
     void Update(
     )
     {
-        Transform pipes = this.gameObject.GetComponent<Transform>();
+        Transform objectPosition = this.gameObject.GetComponent<Transform>();
 
         if ((mainCamera.position.x - pipes.position.x) > 10)
         {
