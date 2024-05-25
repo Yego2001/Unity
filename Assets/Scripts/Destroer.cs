@@ -25,7 +25,7 @@ public class Destroer : MonoBehaviour
     {
         Transform objectPosition = this.gameObject.GetComponent<Transform>();
 
-        if ((mainCamera.position.x - pipes.position.x) > 10)
+        if ((mainCamera.position.x - objectPosition.position.x) > 10)
         {
             Destroy(this.gameObject);
         }
