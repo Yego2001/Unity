@@ -13,6 +13,10 @@ public class Bird : MonoBehaviour
     {
         birdMovie = GetComponent<BirdMovie>();
         ResetGame();
+        goScreen.SetActive(false);
+        startScreen.SetActive(true);
+        Time.timeScale = 0;
+
     }
 
 
@@ -28,6 +32,7 @@ public class Bird : MonoBehaviour
     {
         score = 0;
         birdMovie.ResetBird();
+        Time.timeScale = 1;
     }
 
 
@@ -36,6 +41,8 @@ public class Bird : MonoBehaviour
     {
         Debug.Log("I am a loss");
         Time.timeScale = 0;
+        goScreen.SetActive(true);
+
     }
 }
 
