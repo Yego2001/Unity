@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class Bird : MonoBehaviour
 {
@@ -8,9 +10,11 @@ public class Bird : MonoBehaviour
     public int score;
     public GameObject goScreen;
     public GameObject startScreen;
+    private TMP_Text scoreText;
 
     void Start()
     {
+        scoreText = GameObject.Find("Score").GetComponent<TextMeshProUGUI>();
         birdMovie = GetComponent<BirdMovie>();
         ResetGame();
         goScreen.SetActive(false);
@@ -23,8 +27,11 @@ public class Bird : MonoBehaviour
 
     public void IncreaceScore()
     {
+
         score++;
+        scoreText.SetText("Score: " + score);
     }
+
 
 
 
