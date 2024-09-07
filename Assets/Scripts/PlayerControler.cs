@@ -7,7 +7,7 @@ using UnityEngine;
 public class PlayerControler : MonoBehaviour
 {
     public Rigidbody2D rb;
-    public float moveSpeed = 1000;
+    public float moveSpeed = 500;
     public float jumpSpeed = 333;
 
 
@@ -33,10 +33,5 @@ public class PlayerControler : MonoBehaviour
         }
 
 
-        // rb.AddForce(Vector2.right * moveSpeed * horisontalInput * Time.deltaTime);
-        // if (Input.GetAxis("Horizontal") > 0)
-        // {
-        //     rb.AddForce(Vector3.up * jumpSpeed * Time.deltaTime);
-        // }
     }
 }
