@@ -10,6 +10,7 @@ public class PlayerControler : MonoBehaviour
     public float moveSpeed = 500;
     public float shiftSpeed = 750;
     public float jumpSpeed = 333;
+    public Transform spawnPosition;
 
 
     void Start()
@@ -38,5 +39,16 @@ public class PlayerControler : MonoBehaviour
 
 
 
+
+    }
+
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.gameObject.CompareTag("Respawn"))
+        {
+            transform.position = spawnPosition.position;
+        }
     }
 }
+
