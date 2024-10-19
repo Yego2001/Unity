@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerControler : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class PlayerControler : MonoBehaviour
     public float shiftSpeed = 750;
     public float jumpSpeed = 333;
     public Transform spawnPosition;
+    public int scorePoint = 0;
 
 
     void Start()
@@ -48,7 +50,16 @@ public class PlayerControler : MonoBehaviour
         if (col.gameObject.CompareTag("Respawn"))
         {
             transform.position = spawnPosition.position;
+
+        }
+
+        if (col.gameObject.CompareTag("Cherry"))
+        {
+            scorePoint += 50;
+            Destroy(col.gameObject);
         }
     }
+
+
 }
 
