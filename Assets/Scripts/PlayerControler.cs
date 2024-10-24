@@ -1,9 +1,7 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
+using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
+
 
 public class PlayerControler : MonoBehaviour
 {
@@ -13,11 +11,13 @@ public class PlayerControler : MonoBehaviour
     public float jumpSpeed = 333;
     public Transform spawnPosition;
     public int scorePoint = 0;
+    public TextMeshProUGUI scoreText;
 
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        scoreText.text = "Score: 0 ";
     }
 
     // Update is called once per frame
@@ -55,8 +55,10 @@ public class PlayerControler : MonoBehaviour
 
         if (col.gameObject.CompareTag("Cherry"))
         {
-            scorePoint += 50;
+            scorePoint += UnityEngine.Random.Range(30, 60);
             Destroy(col.gameObject);
+            scoreText.text = "Score: " + scorePoint;
+
         }
     }
 
