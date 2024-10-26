@@ -16,6 +16,6 @@ public class TimerScript : MonoBehaviour
     void Update()
     {
         time += Time.deltaTime;
-        timeText.text = "Time: " + MathF.Round(time);
+        timeText.text = "Time: " + MathF.Floor(time);
     }
 }
