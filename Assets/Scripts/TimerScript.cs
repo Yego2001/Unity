@@ -1,4 +1,6 @@
+using System;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class TimerScript : MonoBehaviour
@@ -14,6 +16,6 @@ public class TimerScript : MonoBehaviour
     void Update()
     {
         time += Time.deltaTime;
-        timeText.text = "Time: " + time;
+        timeText.text = "Time: " + MathF.Round(time);
     }
 }
