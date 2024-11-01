@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class MoveEnemy : MonoBehaviour
@@ -7,7 +8,8 @@ public class MoveEnemy : MonoBehaviour
     public float XleftMove;
     public float XrightMove;
     private float maxRight;
-    private float maxleft;
+    private float maxLeft;
+    public float enemySpeed = 5;
     void Start()
     {
         maxRight = transform.position.x + XrightMove;
@@ -17,10 +19,14 @@ public class MoveEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float chainge direction;
-        if
-        transform.Translate
+        int chaingeDirection = 1;
+        transform.Translate(Vector3.right * chaingeDirection);
+        if (transform.position.x < maxLeft || transform.position.x > maxRight)
+        {
+            chaingeDirection *= -1;
+        }
 
 
     }
+
 }

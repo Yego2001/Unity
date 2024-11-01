@@ -14129,7 +14129,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -728, y: 458}
+  m_AnchoredPosition: {x: -324, y: 217}
   m_SizeDelta: {x: 310.1809, y: 63.1168}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &745893368
@@ -15764,8 +15764,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 718, y: 464.56}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 245, y: 215.07}
+  m_SizeDelta: {x: 200, y: 66.9757}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1702889399
 MonoBehaviour:
@@ -15874,6 +15874,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1723969312}
   - component: {fileID: 1723969311}
+  - component: {fileID: 1723969313}
   m_Layer: 0
   m_Name: bear-walk1
   m_TagString: Untagged
@@ -15942,12 +15943,27 @@ Transform:
   m_GameObject: {fileID: 1723969310}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 121.14, y: -2.71, z: 0}
+  m_LocalPosition: {x: 120.57, y: -2.71, z: 0}
   m_LocalScale: {x: 4.4118, y: 4.4118, z: 4.4118}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1723969313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1723969310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4a987b257f2eb04ca6db8cc0ff1b0a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  XleftMove: 119.34
+  XrightMove: 129.57
+  enemySpeed: 5
 --- !u!1 &1761963963
 GameObject:
   m_ObjectHideFlags: 0
