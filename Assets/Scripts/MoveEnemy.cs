@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class MoveEnemy : MonoBehaviour
@@ -18,16 +15,16 @@ public class MoveEnemy : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector3.right * chaingeDirection * enemySpeed * Time.deltaTime);
-        if (transform.position.x > maxLeft)
+        if (transform.position.x > maxRight)
         {
             chaingeDirection = -1;
-            transform.position = new Vector3(transform.position.x - 0.5f, transform.position.z);
+
         }
-        if (transform.position.x < maxRight)
+        else if (transform.position.x < maxLeft)
         {
             chaingeDirection = 1;
         }
-
+        transform.localScale = new UnityEngine.Vector3(4.4118f * chaingeDirection, 4.4118f, 4.4118f);
 
     }
 
