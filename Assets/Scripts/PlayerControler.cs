@@ -60,10 +60,7 @@ public class PlayerControler : MonoBehaviour
             scoreText.text = "Score: " + scorePoint;
 
         }
-        if (col.gameObject.CompareTag("Enemy"))
-        {
-            transform.position = spawnPosition.position;
-        }
+
     }
 
 

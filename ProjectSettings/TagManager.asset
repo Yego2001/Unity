@@ -8,6 +8,7 @@ TagManager:
   - cherry
   - Cherry
   - Enemy
+  - Level 1
   layers:
   - Default
   - TransparentFX
