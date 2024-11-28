@@ -1,6 +1,7 @@
 using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class PlayerControler : MonoBehaviour
@@ -59,6 +60,15 @@ public class PlayerControler : MonoBehaviour
             Destroy(col.gameObject);
             scoreText.text = "Score: " + scorePoint;
 
+        }
+        if (col.gameObject.CompareTag("Level 1"))
+        {
+            SceneManager.LoadScene("Level 2");
+        }
+
+        if (col.gameObject.CompareTag("Level 2"))
+        {
+            SceneManager.LoadScene("Level 3");
         }
 
     }
