@@ -6,6 +6,7 @@ public class MoveEnemy : MonoBehaviour
     public float maxLeft;
     public float enemySpeed = 5;
     public int chaingeDirection = 1;
+
     void Start()
     {
 
@@ -24,7 +25,7 @@ public class MoveEnemy : MonoBehaviour
         {
             chaingeDirection = 1;
         }
-        transform.localScale = new UnityEngine.Vector3(4.4118f * chaingeDirection, 4.4118f, 4.4118f);
+        transform.localScale = new UnityEngine.Vector3(gameObject.transform.scale.x * chaingeDirection, gameObject.transform.scale.x., gameObject.transform.scale.x);
 
     }
 

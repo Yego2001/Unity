@@ -10,6 +10,7 @@ TagManager:
   - Level
   - Level 2
   - Level2
+  - Level 3
   layers:
   - Default
   - TransparentFX

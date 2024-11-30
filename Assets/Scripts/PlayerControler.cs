@@ -71,6 +71,15 @@ public class PlayerControler : MonoBehaviour
             SceneManager.LoadScene("Level 3");
         }
 
+
+
+        if (col.gameObject.CompareTag("Level 3"))
+        {
+            Debug.Log("Ананас");
+            SceneManager.LoadScene("Level 4");
+        }
+
+
     }
 
 
