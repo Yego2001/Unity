@@ -25,7 +25,7 @@ public class MoveEnemy : MonoBehaviour
         {
             chaingeDirection = 1;
         }
-        transform.localScale = new UnityEngine.Vector3(gameObject.transform.scale.x * chaingeDirection, gameObject.transform.scale.x., gameObject.transform.scale.x);
+        transform.localScale = new Vector3(-chaingeDirection, 1, 1);
 
     }
 
