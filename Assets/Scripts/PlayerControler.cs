@@ -13,20 +13,23 @@ public class PlayerControler : MonoBehaviour
     public Transform spawnPosition;
     public int scorePoint = 0;
     public TextMeshProUGUI scoreText;
+    private Animator animator;
 
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         scoreText.text = "Score: 0 ";
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        float speed = Input.GetKey(KeyCode.LeftShift) ? shiftSpeed : moveSpeed;
 
+        float speed = Input.GetKey(KeyCode.LeftShift) ? shiftSpeed : moveSpeed;
+        animator.SetFloat("Speed", speed);
         float horisontalInput = Input.GetAxis("Horizontal");
         // float verticalInput = Input.GetAxis("Vertical");
 
