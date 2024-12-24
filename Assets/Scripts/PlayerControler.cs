@@ -29,10 +29,9 @@ public class PlayerControler : MonoBehaviour
 
 
         float speed = Input.GetKey(KeyCode.LeftShift) ? shiftSpeed : moveSpeed;
-        animator.SetFloat("Speed", speed);
         float horisontalInput = Input.GetAxis("Horizontal");
         // float verticalInput = Input.GetAxis("Vertical");
-
+        animator.SetFloat("Speed", horisontalInput);
 
         rb.AddForce(Vector3.right * speed * horisontalInput * Time.deltaTime, ForceMode2D.Force);
 
