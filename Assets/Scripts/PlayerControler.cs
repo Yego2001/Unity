@@ -1,6 +1,7 @@
 using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 
 
@@ -31,7 +32,8 @@ public class PlayerControler : MonoBehaviour
         float speed = Input.GetKey(KeyCode.LeftShift) ? shiftSpeed : moveSpeed;
         float horisontalInput = Input.GetAxis("Horizontal");
         // float verticalInput = Input.GetAxis("Vertical");
-        animator.SetFloat("Speed", horisontalInput);
+        animator.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
+        Debug.Log(rb.velocity.x);
 
         rb.AddForce(Vector3.right * speed * horisontalInput * Time.deltaTime, ForceMode2D.Force);
 
@@ -40,6 +42,16 @@ public class PlayerControler : MonoBehaviour
             rb.AddForce(Vector3.up * jumpSpeed, ForceMode2D.Force);
 
         }
+        if (horisontalInput > 0)
+        {
+            transform.localScale = new Vector3(3.5f, 3.5f, 3.5f);
+        }
+
+        if (horisontalInput < 0)
+        {
+            transform.localScale = new Vector3(-3.5f, 3.5f, 3.5f);
+        }
+
 
 
 
