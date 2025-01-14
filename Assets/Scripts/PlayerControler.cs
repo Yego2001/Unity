@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 public class PlayerControler : MonoBehaviour
 {
     public Rigidbody2D rb;
+    public float ctrlSpeed = 250;
     public float moveSpeed = 500;
     public float shiftSpeed = 750;
     public float jumpSpeed = 333;
@@ -30,9 +31,14 @@ public class PlayerControler : MonoBehaviour
 
 
         float speed = Input.GetKey(KeyCode.LeftShift) ? shiftSpeed : moveSpeed;
+        speed = Input.GetKey(KeyCode.LeftControl) ? ctrlSpeed : moveSpeed;
         float horisontalInput = Input.GetAxis("Horizontal");
         // float verticalInput = Input.GetAxis("Vertical");
         animator.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
+        if (Input.GetKey(KeyCode.LeftControl))
+        {
+            animator.SetTrigger("ctrlTrigger");
+        }
         Debug.Log(rb.velocity.x);
 
         rb.AddForce(Vector3.right * speed * horisontalInput * Time.deltaTime, ForceMode2D.Force);
