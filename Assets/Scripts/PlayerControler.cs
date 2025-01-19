@@ -37,7 +37,12 @@ public class PlayerControler : MonoBehaviour
         animator.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
         if (Input.GetKey(KeyCode.LeftControl))
         {
-            animator.SetTrigger("ctrlTrigger");
+            animator.SetBool("ctrlBool", true);
+
+        }
+        else
+        {
+            animator.SetBool("ctrlBool", false);
         }
         Debug.Log(rb.velocity.x);
 
