@@ -6,14 +6,14 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     private float balance;
-    private TextMeshProUGUI pointText;
+    public TextMeshProUGUI balanceText;
     private GameObject canvas;
 
     void Start()
     {
-        canvas = GameObject.Find("Canvas");
-        pointText = canvas.GameObject.Find("Balance").GetComponent<TextMeshProUGUI>();
-        pointText.SetText("Guinea Pig");
+
+
+        balanceText.SetText("0");
 
     }
 
@@ -21,5 +21,11 @@ public class GameManager : MonoBehaviour
     void Update()
     {
 
+    }
+
+
+    private void ButtonClick(int ScoreToAdd)
+    {
+        balance += ScoreToAdd;
     }
 }
