@@ -11,12 +11,13 @@ public class GameManager : MonoBehaviour
     private float balance;
     public TextMeshProUGUI balanceText;
     public Button buttonComponent;
+    public int ScoreToAdd;
 
 
 
     void Start()
     {
-
+        buttonComponent.onClick.AddListener(ButtonClick);
 
 
 
@@ -28,9 +29,10 @@ public class GameManager : MonoBehaviour
     }
 
 
-    private void ButtonClick(int ScoreToAdd)
+    private void ButtonClick()
     {
         balance += ScoreToAdd;
+        updateText();
     }
 
 
