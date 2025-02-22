@@ -41,3 +41,4 @@ public class GameManager : MonoBehaviour
         balanceText.SetText(balance + "");
     }
 }
+
