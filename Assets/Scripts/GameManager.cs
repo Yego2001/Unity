@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -10,14 +11,23 @@ public class GameManager : MonoBehaviour
 {
     private float balance;
     public TextMeshProUGUI balanceText;
-    public Button buttonComponent;
-    public int ScoreToAdd;
+    public Button clickButton;
+    public int ScoreToAdd = 1;
+    public GameObject storeScene;
+    public GameObject homeScene;
+    public Button homeButton;
+    public Button storeButton;
+    private String activeScene = "Home";
+
 
 
 
     void Start()
     {
-        buttonComponent.onClick.AddListener(ButtonClick);
+        clickButton.onClick.AddListener(ButtonClick);
+        homeButton.onClick.AddListener(ButtonClick);
+        storeButton.onClick.AddListener(ButtonClick);
+
 
 
 
@@ -39,6 +49,15 @@ public class GameManager : MonoBehaviour
     public void updateText()
     {
         balanceText.SetText(balance + "");
+    }
+
+
+    private void ChaigeScene()
+    {
+        if (String.Equals(activeScene, "Home"))
+        {
+            homeScene.gameObject.SetActive(false);
+        }
     }
 }
 
