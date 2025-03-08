@@ -25,8 +25,8 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         clickButton.onClick.AddListener(ButtonClick);
-        homeButton.onClick.AddListener(ButtonClick);
-        storeButton.onClick.AddListener(ButtonClick);
+        storeButton.onClick.AddListener(ChaigeScene);
+        homeButton.onClick.AddListener(ChaigeScene);
 
 
 
@@ -56,7 +56,17 @@ public class GameManager : MonoBehaviour
     {
         if (String.Equals(activeScene, "Home"))
         {
+            homeScene.gameObject.SetActive(true);
+            storeScene.SetActive(false);
+            activeScene = "Store";
+
+        }
+        else if (String.Equals(activeScene, "Store"))
+        {
             homeScene.gameObject.SetActive(false);
+            storeScene.SetActive(true);
+            activeScene = "Home";
+
         }
     }
 }

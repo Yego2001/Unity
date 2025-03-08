@@ -338,7 +338,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.339, y: -2.48}
+  m_AnchoredPosition: {x: 2.06, y: -2.48}
   m_SizeDelta: {x: 227.0139, y: 84.7322}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &65271469
@@ -730,7 +730,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &387325560
 Transform:
   m_ObjectHideFlags: 0
@@ -1193,7 +1193,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &672657346
 Transform:
   m_ObjectHideFlags: 0
@@ -1500,12 +1500,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   balanceText: {fileID: 39830590}
-  clickButton: {fileID: 0}
+  clickButton: {fileID: 836201734}
   ScoreToAdd: 1
-  storeScene: {fileID: 0}
-  homeScene: {fileID: 0}
-  homeButton: {fileID: 0}
-  storeButton: {fileID: 0}
+  storeScene: {fileID: 387325559}
+  homeScene: {fileID: 672657345}
+  homeButton: {fileID: 1947938235}
+  storeButton: {fileID: 1633619998}
 --- !u!4 &1276395628
 Transform:
   m_ObjectHideFlags: 0
@@ -1957,7 +1957,7 @@ GameObject:
   - component: {fileID: 1633619999}
   - component: {fileID: 1633619998}
   m_Layer: 5
-  m_Name: UpdateButton
+  m_Name: StoreButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
