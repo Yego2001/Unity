@@ -9,8 +9,9 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    private float balance;
+    public float balance;
     public TextMeshProUGUI balanceText;
+    public TextMeshProUGUI balanceText2;
     public Button clickButton;
     public int ScoreToAdd = 1;
     public GameObject storeScene;
@@ -49,6 +50,7 @@ public class GameManager : MonoBehaviour
     public void updateText()
     {
         balanceText.SetText(balance + "");
+        balanceText2.SetText(balance + "");
     }
 
 
