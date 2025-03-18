@@ -14,13 +14,20 @@ public class BuyScript : MonoBehaviour
     public Button temporaryIncreaseInTapButton;
     public Button criticalTapButton;
     private GameManager gameManager;
-    private int priceincreaseTapByOne = 100;
+    private int priceIncreaseTapByOne = 100;
     private int priceTemporaryIncreaseInTap = 250;
     private int priceCriticalTap = 500;
+    public TextMeshProUGUI priceIncreaseTapByOneText;
+    public TextMeshProUGUI priceTemporaryIncreaseInTapText;
+    public TextMeshProUGUI priceCriticalTapText;
+
+
 
     void Start()
     {
+        increaseTapByOneButton.onClick.AddListener(TapByOne);
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+
     }
 
     // Update is called once per frame
@@ -31,10 +38,14 @@ public class BuyScript : MonoBehaviour
 
     private void TapByOne()
     {
-        if (gameManager.balance >= priceincreaseTapByOne)
+        if (gameManager.balance >= priceIncreaseTapByOne)
         {
-            gameManager.balance -= priceincreaseTapByOne;
+            gameManager.balance -= priceIncreaseTapByOne;
             gameManager.ScoreToAdd++;
+            priceIncreaseTapByOne = (int)(priceIncreaseTapByOne * 1.2);
+            priceIncreaseTapByOneText.SetText(priceIncreaseTapByOne + "");
+            gameManager.updateText();
+
         }
     }
 }
