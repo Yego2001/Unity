@@ -23,12 +23,16 @@ public class BuyScript : MonoBehaviour
 
 
 
+
     void Start()
     {
         increaseTapByOneButton.onClick.AddListener(TapByOne);
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
 
+
+
     }
+
 
     // Update is called once per frame
     void Update()
@@ -47,5 +51,21 @@ public class BuyScript : MonoBehaviour
             gameManager.updateText();
 
         }
+    }
+
+    private void CriticalTap()
+    {
+        if (gameManager.balance >= priceCriticalTap)
+        {
+            int multiplier = Random.Range(2, 11);
+            gameManager.balance -= priceCriticalTap;
+            gameManager.ScoreToAdd *= multiplier;
+            priceCriticalTap = (int)(priceCriticalTap * 1.3);
+            priceCriticalTapText.SetText(priceCriticalTap + "");
+            gameManager.updateText();
+
+
+        }
+
     }
 }
