@@ -1,4 +1,4 @@
-using System;
+
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -24,9 +24,11 @@ public class BuyScript : MonoBehaviour
 
 
 
+
     void Start()
     {
         increaseTapByOneButton.onClick.AddListener(TapByOne);
+        criticalTapButton.onClick.AddListener(CriticalTap);
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
 
 
@@ -57,15 +59,26 @@ public class BuyScript : MonoBehaviour
     {
         if (gameManager.balance >= priceCriticalTap)
         {
-            int multiplier = Random.Range(2, 11);
+            gameManager.multiplier = Random.Range(2, 11);
             gameManager.balance -= priceCriticalTap;
-            gameManager.ScoreToAdd *= multiplier;
+            gameManager.ScoreToAdd *= gameManager.multiplier;
             priceCriticalTap = (int)(priceCriticalTap * 1.3);
             priceCriticalTapText.SetText(priceCriticalTap + "");
             gameManager.updateText();
+            StartCoroutine(ResetMultiplier());
 
 
         }
 
+
     }
+
+    IEnumerator ResetMultiplier()
+    {
+        yield return new WaitForSeconds(15);
+        gameManager.multiplier = 1;
+    }
+
+
+
 }

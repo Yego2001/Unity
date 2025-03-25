@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     public Button homeButton;
     public Button storeButton;
     private String activeScene = "Home";
+    public int multiplier = 1;
 
 
 
@@ -42,7 +43,7 @@ public class GameManager : MonoBehaviour
 
     private void ButtonClick()
     {
-        balance += ScoreToAdd;
+        balance += (ScoreToAdd * multiplier);
         updateText();
     }
 
