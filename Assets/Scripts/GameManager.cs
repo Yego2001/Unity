@@ -9,7 +9,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public float balance;
+    public long balance;
     public TextMeshProUGUI balanceText;
     public TextMeshProUGUI balanceText2;
     public Button clickButton;
