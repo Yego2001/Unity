@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -50,7 +51,7 @@ public class GameManager : MonoBehaviour
 
     public void updateText()
     {
-        balanceText.SetText(balance + "");
+        balanceText.SetText(FormatterNumber.FormatNumber);
         balanceText2.SetText(balance + "");
     }
 
