@@ -24,7 +24,6 @@ public class GameManager : MonoBehaviour
 
 
 
-
     void Start()
     {
         clickButton.onClick.AddListener(ButtonClick);
@@ -51,7 +50,7 @@ public class GameManager : MonoBehaviour
 
     public void updateText()
     {
-        balanceText.SetText(FormatterNumber.FormatNumber);
+        balanceText.SetText(NumberFormatter.FormatNumber(balance));
         balanceText2.SetText(balance + "");
     }
 

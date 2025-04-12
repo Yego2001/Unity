@@ -1,10 +1,10 @@
 
 using System.Collections;
-using System.Collections.Generic;
+
 using TMPro;
-using Unity.VisualScripting;
+
 using UnityEngine;
-using UnityEngine.Rendering.VirtualTexturing;
+
 using UnityEngine.UI;
 
 
@@ -63,11 +63,10 @@ public class BuyScript : MonoBehaviour
         {
             gameManager.multiplier = 5;
             gameManager.balance -= priceTemporaryIncreaseInTap;
-            gameManager.ScoreToAdd *= gameManager.multiplier;
             priceTemporaryIncreaseInTap = (int)(priceTemporaryIncreaseInTap * 1.3);
             priceTemporaryIncreaseInTapText.SetText(priceTemporaryIncreaseInTap + "");
             gameManager.updateText();
-            StartCoroutine(ResetMultiplier());
+            StartCoroutine("ResetMultiplier");
 
 
         }
@@ -96,6 +95,7 @@ public class BuyScript : MonoBehaviour
     IEnumerator ResetMultiplier()
     {
         yield return new WaitForSeconds(10);
+        Debug.Log("Время Закончилось");
         gameManager.multiplier = 1;
     }
 
