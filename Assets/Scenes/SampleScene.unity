@@ -163,8 +163,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 0
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
-  m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -254,7 +254,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.95, y: -2.48}
+  m_AnchoredPosition: {x: 2.605, y: -2.416}
   m_SizeDelta: {x: 227.0139, y: 84.7322}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &65271469
@@ -605,7 +605,6 @@ GameObject:
   - component: {fileID: 265965710}
   - component: {fileID: 265965709}
   - component: {fileID: 265965708}
-  - component: {fileID: 265965711}
   m_Layer: 5
   m_Name: PriceButton Critical Tap
   m_TagString: Untagged
@@ -714,24 +713,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 265965706}
   m_CullTransparentMesh: 1
---- !u!114 &265965711
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 265965706}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3665244bef5f94cfebf8eb72e559931d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  increaseTapByOneButton: {fileID: 1492350276}
-  temporaryIncreaseInTapButton: {fileID: 1752321841}
-  criticalTapButton: {fileID: 265965708}
-  priceIncreaseTapByOneText: {fileID: 1261012117}
-  priceTemporaryIncreaseInTapText: {fileID: 579750487}
-  priceCriticalTapText: {fileID: 1003938369}
 --- !u!1 &329039146
 GameObject:
   m_ObjectHideFlags: 0
@@ -869,7 +850,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &387325560
 Transform:
   m_ObjectHideFlags: 0
@@ -1335,7 +1316,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &672657346
 Transform:
   m_ObjectHideFlags: 0
@@ -1840,6 +1821,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1276395628}
   - component: {fileID: 1276395627}
+  - component: {fileID: 1276395629}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1884,6 +1866,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1276395629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1276395626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3665244bef5f94cfebf8eb72e559931d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  increaseTapByOneButton: {fileID: 1492350276}
+  temporaryIncreaseInTapButton: {fileID: 1752321841}
+  criticalTapButton: {fileID: 265965708}
+  priceIncreaseTapByOneText: {fileID: 1261012117}
+  priceTemporaryIncreaseInTapText: {fileID: 579750487}
+  priceCriticalTapText: {fileID: 1003938369}
 --- !u!1 &1298485023
 GameObject:
   m_ObjectHideFlags: 0
@@ -2031,7 +2031,6 @@ GameObject:
   - component: {fileID: 1492350278}
   - component: {fileID: 1492350277}
   - component: {fileID: 1492350276}
-  - component: {fileID: 1492350279}
   m_Layer: 5
   m_Name: PriceButton +1
   m_TagString: Untagged
@@ -2140,24 +2139,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1492350274}
   m_CullTransparentMesh: 1
---- !u!114 &1492350279
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1492350274}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3665244bef5f94cfebf8eb72e559931d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  increaseTapByOneButton: {fileID: 1492350276}
-  temporaryIncreaseInTapButton: {fileID: 1752321841}
-  criticalTapButton: {fileID: 265965708}
-  priceIncreaseTapByOneText: {fileID: 1261012117}
-  priceTemporaryIncreaseInTapText: {fileID: 579750487}
-  priceCriticalTapText: {fileID: 1003938369}
 --- !u!1 &1570525556
 GameObject:
   m_ObjectHideFlags: 0
@@ -2268,7 +2249,7 @@ Transform:
   m_GameObject: {fileID: 1600737021}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.891, y: -2.473, z: 0.1352}
+  m_LocalPosition: {x: 1.089, y: -2.389, z: 0.1352}
   m_LocalScale: {x: 0.18887296, y: 0.18887296, z: 0.18887296}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2592,7 +2573,6 @@ GameObject:
   - component: {fileID: 1752321843}
   - component: {fileID: 1752321842}
   - component: {fileID: 1752321841}
-  - component: {fileID: 1752321844}
   m_Layer: 5
   m_Name: PriceButton *5 for 15 sec
   m_TagString: Untagged
@@ -2701,24 +2681,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1752321839}
   m_CullTransparentMesh: 1
---- !u!114 &1752321844
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1752321839}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3665244bef5f94cfebf8eb72e559931d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  increaseTapByOneButton: {fileID: 1492350276}
-  temporaryIncreaseInTapButton: {fileID: 1752321841}
-  criticalTapButton: {fileID: 265965708}
-  priceIncreaseTapByOneText: {fileID: 1261012117}
-  priceTemporaryIncreaseInTapText: {fileID: 579750487}
-  priceCriticalTapText: {fileID: 1003938369}
 --- !u!1 &1947938233
 GameObject:
   m_ObjectHideFlags: 0

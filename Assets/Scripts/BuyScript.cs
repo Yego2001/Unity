@@ -49,7 +49,7 @@ public class BuyScript : MonoBehaviour
         {
             gameManager.balance -= priceIncreaseTapByOne;
             gameManager.ScoreToAdd++;
-            priceIncreaseTapByOne = (int)(priceIncreaseTapByOne * 1.2);
+            priceIncreaseTapByOne = Mathf.CeilToInt(priceIncreaseTapByOne * 1.2f / 10f) * 10;
             priceIncreaseTapByOneText.SetText(priceIncreaseTapByOne + "");
             gameManager.updateText();
 
@@ -63,10 +63,10 @@ public class BuyScript : MonoBehaviour
         {
             gameManager.multiplier = 5;
             gameManager.balance -= priceTemporaryIncreaseInTap;
-            priceTemporaryIncreaseInTap = (int)(priceTemporaryIncreaseInTap * 1.3);
+            priceTemporaryIncreaseInTap = Mathf.CeilToInt(priceTemporaryIncreaseInTap * 1.3f / 10f) * 10;
             priceTemporaryIncreaseInTapText.SetText(priceTemporaryIncreaseInTap + "");
             gameManager.updateText();
-            StartCoroutine("ResetMultiplier");
+            StartCoroutine(ResetMultiplier());
 
 
         }
@@ -81,7 +81,7 @@ public class BuyScript : MonoBehaviour
             gameManager.multiplier = Random.Range(2, 11);
             gameManager.balance -= priceCriticalTap;
             gameManager.ScoreToAdd *= gameManager.multiplier;
-            priceCriticalTap = (int)(priceCriticalTap * 1.5);
+            priceCriticalTap = Mathf.CeilToInt(priceCriticalTap * 1.5f / 10f) * 10;
             priceCriticalTapText.SetText(priceCriticalTap + "");
             gameManager.updateText();
             StartCoroutine(ResetMultiplier());
@@ -94,9 +94,11 @@ public class BuyScript : MonoBehaviour
 
     IEnumerator ResetMultiplier()
     {
+        Debug.Log("Coroutine запущена");
         yield return new WaitForSeconds(10);
         Debug.Log("Время Закончилось");
         gameManager.multiplier = 1;
+
     }
 
 
