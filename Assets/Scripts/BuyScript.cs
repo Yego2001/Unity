@@ -13,13 +13,16 @@ public class BuyScript : MonoBehaviour
     public Button increaseTapByOneButton;
     public Button temporaryIncreaseInTapButton;
     public Button criticalTapButton;
+    public Button assistantButton;
     private GameManager gameManager;
     private int priceIncreaseTapByOne = 100;
     private int priceTemporaryIncreaseInTap = 250;
     private int priceCriticalTap = 1000;
+    private int priceAssistant = 1500;
     public TextMeshProUGUI priceIncreaseTapByOneText;
     public TextMeshProUGUI priceTemporaryIncreaseInTapText;
     public TextMeshProUGUI priceCriticalTapText;
+    public TextMeshProUGUI priceAssistantText;
 
 
 
@@ -30,6 +33,7 @@ public class BuyScript : MonoBehaviour
         increaseTapByOneButton.onClick.AddListener(TapByOne);
         temporaryIncreaseInTapButton.onClick.AddListener(TemporaryIncreaseInTap);
         criticalTapButton.onClick.AddListener(CriticalTap);
+        assistantButton.onClick.AddListener(Assistant);
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
 
 
@@ -90,6 +94,15 @@ public class BuyScript : MonoBehaviour
         }
 
 
+    }
+
+    private void Assistant()
+    {
+        if (gameManager.balance >= priceAssistant)
+        {
+            gameManager.balance -= priceIncreaseTapByOne;
+            gameManager.updateText();
+        }
     }
 
     IEnumerator ResetMultiplier()
