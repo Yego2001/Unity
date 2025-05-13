@@ -23,6 +23,7 @@ public class BuyScript : MonoBehaviour
     public TextMeshProUGUI priceTemporaryIncreaseInTapText;
     public TextMeshProUGUI priceCriticalTapText;
     public TextMeshProUGUI priceAssistantText;
+    private AssistantScript assistantScript;
 
 
 
@@ -35,6 +36,8 @@ public class BuyScript : MonoBehaviour
         criticalTapButton.onClick.AddListener(CriticalTap);
         assistantButton.onClick.AddListener(Assistant);
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        assistantScript = gameObject.GetComponent<AssistantScript>();
+        
 
 
 
@@ -100,7 +103,8 @@ public class BuyScript : MonoBehaviour
     {
         if (gameManager.balance >= priceAssistant)
         {
-            gameManager.balance -= priceIncreaseTapByOne;
+            gameManager.balance -= priceAssistant;
+            
             gameManager.updateText();
         }
     }
