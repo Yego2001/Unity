@@ -37,7 +37,7 @@ public class BuyScript : MonoBehaviour
         assistantButton.onClick.AddListener(Assistant);
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         assistantScript = gameObject.GetComponent<AssistantScript>();
-        
+
 
 
 
@@ -103,8 +103,9 @@ public class BuyScript : MonoBehaviour
     {
         if (gameManager.balance >= priceAssistant)
         {
+
             gameManager.balance -= priceAssistant;
-            
+            assistantScript.accrualPerSecond += 5;
             gameManager.updateText();
         }
     }
