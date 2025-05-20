@@ -14,15 +14,18 @@ public class BuyScript : MonoBehaviour
     public Button temporaryIncreaseInTapButton;
     public Button criticalTapButton;
     public Button assistantButton;
+    public Button superClickButton;
     private GameManager gameManager;
     private int priceIncreaseTapByOne = 100;
     private int priceTemporaryIncreaseInTap = 250;
     private int priceCriticalTap = 1000;
     private int priceAssistant = 1500;
+    private int priceSuperClick = 3000;
     public TextMeshProUGUI priceIncreaseTapByOneText;
     public TextMeshProUGUI priceTemporaryIncreaseInTapText;
     public TextMeshProUGUI priceCriticalTapText;
     public TextMeshProUGUI priceAssistantText;
+    public TextMeshProUGUI priceSuperClickText;
     private AssistantScript assistantScript;
 
 
@@ -35,6 +38,7 @@ public class BuyScript : MonoBehaviour
         temporaryIncreaseInTapButton.onClick.AddListener(TemporaryIncreaseInTap);
         criticalTapButton.onClick.AddListener(CriticalTap);
         assistantButton.onClick.AddListener(Assistant);
+        superClickButton.onClick.AddListener(SuperClick);
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         assistantScript = gameObject.GetComponent<AssistantScript>();
 
@@ -106,7 +110,21 @@ public class BuyScript : MonoBehaviour
 
             gameManager.balance -= priceAssistant;
             assistantScript.accrualPerSecond += 5;
+            priceAssistant = Mathf.CeilToInt(priceAssistant * 1.3f / 10f) * 10;
             gameManager.updateText();
+        }
+    }
+
+
+
+     private void SuperClick()
+    {
+        if (gameManager.balance >= priceSuperClick)
+        {
+            assistantScript.accrualPerSecond += 200;
+            priceAssistant = Mathf.CeilToInt(priceAssistant * 1.5f / 10f) * 10;
+            gameManager.updateText();
+            StartCoroutine(ResetMultiplier());
         }
     }
 
