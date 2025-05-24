@@ -2407,13 +2407,13 @@ MonoBehaviour:
   balance: 3900
   balanceText: {fileID: 39830590}
   balanceText2: {fileID: 1687534550}
-  clickButton: {fileID: 836201734}
   ScoreToAdd: 1
+  multiplier: 1
   storeScene: {fileID: 387325559}
   homeScene: {fileID: 672657345}
   homeButton: {fileID: 1947938235}
   storeButton: {fileID: 1633619998}
-  multiplier: 1
+  clickButton: {fileID: 836201734}
 --- !u!4 &1276395628
 Transform:
   m_ObjectHideFlags: 0
@@ -2445,12 +2445,12 @@ MonoBehaviour:
   temporaryIncreaseInTapButton: {fileID: 1752321841}
   criticalTapButton: {fileID: 265965708}
   assistantButton: {fileID: 1747339561}
-  superClickButton: {fileID: 109354225}
+  superClickerButton: {fileID: 109354225}
   priceIncreaseTapByOneText: {fileID: 1261012117}
   priceTemporaryIncreaseInTapText: {fileID: 579750487}
   priceCriticalTapText: {fileID: 1003938369}
   priceAssistantText: {fileID: 560189297}
-  priceSuperClickText: {fileID: 989564262}
+  priceSuperClickerText: {fileID: 989564262}
 --- !u!114 &1276395630
 MonoBehaviour:
   m_ObjectHideFlags: 0

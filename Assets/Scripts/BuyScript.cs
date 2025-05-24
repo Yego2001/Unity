@@ -14,18 +14,18 @@ public class BuyScript : MonoBehaviour
     public Button temporaryIncreaseInTapButton;
     public Button criticalTapButton;
     public Button assistantButton;
-    public Button superClickButton;
+    public Button superClickerButton;
     private GameManager gameManager;
     private int priceIncreaseTapByOne = 100;
     private int priceTemporaryIncreaseInTap = 250;
     private int priceCriticalTap = 1000;
     private int priceAssistant = 1500;
-    private int priceSuperClick = 3000;
+    private int priceSuperClicker = 4000;
     public TextMeshProUGUI priceIncreaseTapByOneText;
     public TextMeshProUGUI priceTemporaryIncreaseInTapText;
     public TextMeshProUGUI priceCriticalTapText;
     public TextMeshProUGUI priceAssistantText;
-    public TextMeshProUGUI priceSuperClickText;
+    public TextMeshProUGUI priceSuperClickerText;
     private AssistantScript assistantScript;
 
 
@@ -38,7 +38,7 @@ public class BuyScript : MonoBehaviour
         temporaryIncreaseInTapButton.onClick.AddListener(TemporaryIncreaseInTap);
         criticalTapButton.onClick.AddListener(CriticalTap);
         assistantButton.onClick.AddListener(Assistant);
-        superClickButton.onClick.AddListener(SuperClick);
+        superClickerButton.onClick.AddListener(SuperClicker);
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         assistantScript = gameObject.GetComponent<AssistantScript>();
 
@@ -117,14 +117,16 @@ public class BuyScript : MonoBehaviour
 
 
 
-     private void SuperClick()
+    private void SuperClicker()
     {
-        if (gameManager.balance >= priceSuperClick)
+        if (gameManager.balance >= priceSuperClicker)
         {
+            gameManager.balance -= priceSuperClicker;
             assistantScript.accrualPerSecond += 200;
-            priceAssistant = Mathf.CeilToInt(priceAssistant * 1.5f / 10f) * 10;
+            priceSuperClicker = Mathf.CeilToInt(priceSuperClicker * 1.5f / 10f) * 10;
             gameManager.updateText();
-            StartCoroutine(ResetMultiplier());
+            StartCoroutine(ResetClick());
+
         }
     }
 
@@ -137,6 +139,12 @@ public class BuyScript : MonoBehaviour
 
     }
 
+    private IEnumerator ResetClick()
+    {
+        yield return new WaitForSeconds(10);
+        assistantScript.accrualPerSecond -= 200;
+
+    }
 
 
 }

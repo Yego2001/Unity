@@ -13,14 +13,20 @@ public class GameManager : MonoBehaviour
     public long balance;
     public TextMeshProUGUI balanceText;
     public TextMeshProUGUI balanceText2;
-    public Button clickButton;
+
     public int ScoreToAdd = 1;
+    public int multiplier = 1;
+
     public GameObject storeScene;
     public GameObject homeScene;
+
     public Button homeButton;
     public Button storeButton;
+    public Button clickButton;
+
     private String activeScene = "Home";
-    public int multiplier = 1;
+
+
 
 
 
